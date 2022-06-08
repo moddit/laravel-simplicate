@@ -9,7 +9,7 @@ W.I.P.
 
  Laravel             | Package 
 :--------------------|:--------
- 5.3.x and older     | 0.9.x
+ ^9.x                 | 0.9.1
 
 
 
@@ -18,7 +18,7 @@ W.I.P.
 Via Composer:
 
 ``` bash
-$ composer require czim/laravel-simplicate
+$ composer require moddit/laravel-simplicate
 ```
 
 If you don't use auto-discover, register the Service Provider in your `config/app.php`:

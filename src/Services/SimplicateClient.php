@@ -270,7 +270,7 @@ class SimplicateClient implements SimplicateClientInterface
     {
         if (null !== $this->authenticationKey && null !== $this->authenticationSecret) {
             Arr::set($options, 'headers.Authentication-Key', $this->authenticationKey);
-            Arr::set($options, 'aheaders.Authentication-Secret', $this->authenticationSecret);
+            Arr::set($options, 'headers.Authentication-Secret', $this->authenticationSecret);
         }
 
         return $options;
