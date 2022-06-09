@@ -1,10 +1,10 @@
 <?php
 
-namespace Czim\Simplicate\Data\Project;
+namespace Moddit\Simplicate\Data\Project;
 
 use Carbon\Carbon;
-use Czim\Simplicate\Data\AbstractDataObject;
-use Czim\Simplicate\Data\Hours\VatClass;
+use Moddit\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\Hours\VatClass;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\CustomField;
+namespace Moddit\Simplicate\Data\CustomField;
 
-use Czim\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class CustomField extends AbstractDataObject

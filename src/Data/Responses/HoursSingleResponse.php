@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Responses;
+namespace Moddit\Simplicate\Data\Responses;
 
-use Czim\Simplicate\Data\Hours\Hours;
+use Moddit\Simplicate\Data\Hours\Hours;
 
 /**
  * Class HoursSingleResponse

@@ -2,27 +2,26 @@
 
 namespace Moddit\Simplicate\Data\Responses;
 
-use Moddit\Simplicate\Data\Leave\Leave;
+use Moddit\Simplicate\Contracts\Data\SimplicateResponseInterface;
+use Moddit\Simplicate\Data\Employee\Person;
 use Illuminate\Support\Collection;
 
 /**
- * Class LeaveListResponse
+ * Class PersonListResponse
  *
- * @method Collection|Leave[] getData()
+ * @method Collection|Person[] getData()
  */
-class LeaveListResponse extends AbstractDataResponse
+class PersonListResponse extends AbstractDataResponse implements SimplicateResponseInterface
 {
-
     protected function setData($data)
     {
         $this->data = new Collection(
             array_map(
                 function (array $item) {
-                    return new Leave($item);
+                    return new Person($item);
                 },
                 $data
             )
         );
     }
-
 }

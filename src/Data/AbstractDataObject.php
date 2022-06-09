@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\Simplicate\Data;
+namespace Moddit\Simplicate\Data;
 
 use Carbon\Carbon;
 use DateTime;

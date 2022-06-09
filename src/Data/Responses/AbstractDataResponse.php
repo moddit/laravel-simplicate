@@ -1,9 +1,9 @@
 <?php
 
-namespace Czim\Simplicate\Data\Responses;
+namespace Moddit\Simplicate\Data\Responses;
 
-use Czim\Simplicate\Contracts\Data\SimplicateResponseInterface;
-use Czim\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Contracts\Data\SimplicateResponseInterface;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Contracts\Support\Arrayable;
 
 abstract class AbstractDataResponse extends AbstractDataObject implements SimplicateResponseInterface

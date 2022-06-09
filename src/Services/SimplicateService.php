@@ -1,13 +1,14 @@
 <?php
 
-namespace Czim\Simplicate\Services;
+namespace Moddit\Simplicate\Services;
 
-use Czim\Simplicate\Contracts\Services\Domains;
-use Czim\Simplicate\Contracts\Services\SimplicateClientInterface;
-use Czim\Simplicate\Contracts\Services\SimplicateServiceInterface;
-use Czim\Simplicate\Services\Domains\HoursDomain;
-use Czim\Simplicate\Services\Domains\HrmDomain;
-use Czim\Simplicate\Services\Domains\ProjectsDomain;
+use Moddit\Simplicate\Contracts\Services\Domains;
+use Moddit\Simplicate\Contracts\Services\SimplicateClientInterface;
+use Moddit\Simplicate\Contracts\Services\SimplicateServiceInterface;
+use Moddit\Simplicate\Services\Domains\HoursDomain;
+use Moddit\Simplicate\Services\Domains\HrmDomain;
+use Moddit\Simplicate\Services\Domains\ProjectsDomain;
+use Moddit\Simplicate\Services\Domains\CrmDomain;
 
 class SimplicateService implements SimplicateServiceInterface
 {
@@ -33,13 +34,14 @@ class SimplicateService implements SimplicateServiceInterface
     protected $projects;
 
 
-    public function __construct(SimplicateClientInterface $client)
+    public function __construct()
     {
-        $this->client = $client;
+        $this->client = new SimplicateClient;
 
-        $this->hours    = new HoursDomain($client);
-        $this->hrm      = new HrmDomain($client);
-        $this->projects = new ProjectsDomain($client);
+        $this->hours    = new HoursDomain($this->client);
+        $this->hrm      = new HrmDomain($this->client);
+        $this->projects = new ProjectsDomain($this->client);
+        $this->crm      = new CrmDomain($this->client);
     }
 
 
@@ -65,4 +67,8 @@ class SimplicateService implements SimplicateServiceInterface
         return $this->projects;
     }
 
+    public function crm(): Domains\CrmDomainInterface
+    {
+        return $this->crm;
+    }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Leave;
+namespace Moddit\Simplicate\Data\Leave;
 
-use Czim\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class LeaveTypeReference extends AbstractDataObject

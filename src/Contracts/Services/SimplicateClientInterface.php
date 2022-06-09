@@ -1,13 +1,12 @@
 <?php
 
-namespace Czim\Simplicate\Contracts\Services;
+namespace Moddit\Simplicate\Contracts\Services;
 
-use Czim\Simplicate\Contracts\Data\SimplicateResponseInterface;
+use Moddit\Simplicate\Contracts\Data\SimplicateResponseInterface;
 
 interface SimplicateClientInterface
 {
-
-    public function setAuthentication(string $key, string $secret): SimplicateClientInterface;
+    public function setAuthentication(): SimplicateClientInterface;
 
     /**
      * @param int $offset

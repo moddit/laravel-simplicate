@@ -1,10 +1,10 @@
 <?php
 
-namespace Czim\Simplicate\Contracts\Services\Domains;
+namespace Moddit\Simplicate\Contracts\Services\Domains;
 
-use Czim\Simplicate\Contracts\Services\SimplicateDomainInterface;
-use Czim\Simplicate\Data\Responses\ServiceSingleResponse;
-use Czim\Simplicate\Data\Responses\ServicesListResponse;
+use Moddit\Simplicate\Contracts\Services\SimplicateDomainInterface;
+use Moddit\Simplicate\Data\Responses\ServiceSingleResponse;
+use Moddit\Simplicate\Data\Responses\ServicesListResponse;
 
 interface ProjectsDomainInterface extends SimplicateDomainInterface
 {

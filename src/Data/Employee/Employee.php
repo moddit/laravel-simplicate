@@ -1,9 +1,9 @@
 <?php
 
-namespace Czim\Simplicate\Data\Employee;
+namespace Moddit\Simplicate\Data\Employee;
 
 use Carbon\Carbon;
-use Czim\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

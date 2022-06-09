@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Service;
+namespace Modditit\Simplicate\Data\Service;
 
-use Czim\Simplicate\Data\AbstractDataObject;
+use Modditit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class ServiceReference extends AbstractDataObject

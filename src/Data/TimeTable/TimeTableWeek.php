@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\TimeTable;
+namespace Modditit\Simplicate\Data\TimeTable;
 
-use Czim\Simplicate\Data\AbstractDataObject;
+use Modditit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class TimeTableWeek extends AbstractDataObject

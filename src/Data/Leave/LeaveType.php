@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\Simplicate\Data\Leave;
+namespace Moddit\Simplicate\Data\Leave;
 
 use Illuminate\Support\Arr;
 

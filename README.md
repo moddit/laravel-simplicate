@@ -27,7 +27,7 @@ If you don't use auto-discover, register the Service Provider in your `config/ap
 <?php
     'providers' => [
         // ...
-        Czim\Simplicate\Providers\SimplicateServiceProvider::class,
+        Moddit\Simplicate\Providers\SimplicateServiceProvider::class,
     ],
 ```
 
@@ -35,7 +35,7 @@ If you don't use auto-discover, register the Service Provider in your `config/ap
 Publish the configuration file:
 
 ``` bash
-php artisan vendor:publish --provider="Czim\Simplicate\Providers\SimplicateServiceProvider"
+php artisan vendor:publish --provider="Moddit\Simplicate\Providers\SimplicateServiceProvider"
 ```
 
 ## Configuration
@@ -58,7 +58,7 @@ For filterable, orderable listings, you can use fluent syntax to set parameters:
 
 ```php
 <?php
-/** @var \Czim\Simplicate\Services\SimplicateService $service */
+/** @var \Moddit\Simplicate\Services\SimplicateService $service */
 $leaveRecords = $service->hrm()
     ->offset(2)
     ->limit(10)
@@ -81,11 +81,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/czim/laravel-simplicate.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/czim/laravel-simplicate.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/czim/laravel-simplicate
-[link-downloads]: https://packagist.org/packages/czim/laravel-simplicate
-[link-author]: https://github.com/czim
+[link-author]: https://github.com/moddit
 [link-contributors]: ../../contributors

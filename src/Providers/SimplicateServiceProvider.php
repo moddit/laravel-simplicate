@@ -1,8 +1,9 @@
 <?php
-namespace Czim\Simplicate\Providers;
+namespace Moddit\Simplicate\Providers;
 
-use Czim\Simplicate\Contracts\Services\SimplicateServiceInterface;
-use Czim\Simplicate\Services\SimplicateServiceFactory;
+use Moddit\Simplicate\Contracts\Services\SimplicateServiceInterface;
+use Moddit\Simplicate\Services\SimplicateService;
+use Moddit\Simplicate\Services\SimplicateServiceFactory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +19,10 @@ class SimplicateServiceProvider extends ServiceProvider
     {
         $this->registerConfig()
              ->registerInterfaceBindings();
+
+        $this->app->bind('simplicate-service', function() {
+            return new SimplicateService();
+        });
     }
 
     /**

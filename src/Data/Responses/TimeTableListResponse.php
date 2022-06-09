@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Responses;
+namespace Moddit\Simplicate\Data\Responses;
 
-use Czim\Simplicate\Data\TimeTable\TimeTable;
+use Moddit\Simplicate\Data\TimeTable\TimeTable;
 use Illuminate\Support\Collection;
 
 /**

@@ -1,22 +1,22 @@
 <?php
 
-namespace Czim\Simplicate\Contracts\Services\Domains;
+namespace Moddit\Simplicate\Contracts\Services\Domains;
 
-use Czim\Simplicate\Contracts\Services\SimplicateDomainInterface;
-use Czim\Simplicate\Data\Responses\EmployeeListResponse;
-use Czim\Simplicate\Data\Responses\EmployeeSingleResponse;
-use Czim\Simplicate\Data\Responses\EmployeeTypeListResponse;
-use Czim\Simplicate\Data\Responses\EmployeeTypeSingleResponse;
-use Czim\Simplicate\Data\Responses\EmploymentTypeListResponse;
-use Czim\Simplicate\Data\Responses\EmploymentTypeSingleResponse;
-use Czim\Simplicate\Data\Responses\LeaveBalanceListResponse;
-use Czim\Simplicate\Data\Responses\LeaveListResponse;
-use Czim\Simplicate\Data\Responses\LeaveSingleResponse;
-use Czim\Simplicate\Data\Responses\LeaveTypeListResponse;
-use Czim\Simplicate\Data\Responses\LeaveTypeSingleResponse;
-use Czim\Simplicate\Data\Responses\TeamListResponse;
-use Czim\Simplicate\Data\Responses\TeamSingleResponse;
-use Czim\Simplicate\Data\Responses\TimeTableListResponse;
+use Moddit\Simplicate\Contracts\Services\SimplicateDomainInterface;
+use Moddit\Simplicate\Data\Responses\EmployeeListResponse;
+use Moddit\Simplicate\Data\Responses\EmployeeSingleResponse;
+use Moddit\Simplicate\Data\Responses\EmployeeTypeListResponse;
+use Moddit\Simplicate\Data\Responses\EmployeeTypeSingleResponse;
+use Moddit\Simplicate\Data\Responses\EmploymentTypeListResponse;
+use Moddit\Simplicate\Data\Responses\EmploymentTypeSingleResponse;
+use Moddit\Simplicate\Data\Responses\LeaveBalanceListResponse;
+use Moddit\Simplicate\Data\Responses\LeaveListResponse;
+use Moddit\Simplicate\Data\Responses\LeaveSingleResponse;
+use Moddit\Simplicate\Data\Responses\LeaveTypeListResponse;
+use Moddit\Simplicate\Data\Responses\LeaveTypeSingleResponse;
+use Moddit\Simplicate\Data\Responses\TeamListResponse;
+use Moddit\Simplicate\Data\Responses\TeamSingleResponse;
+use Moddit\Simplicate\Data\Responses\TimeTableListResponse;
 
 interface HrmDomainInterface extends SimplicateDomainInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Czim\Simplicate\Services;
+namespace Moddit\Simplicate\Services;
 
-use Czim\Simplicate\Contracts\Services\SimplicateClientInterface;
-use Czim\Simplicate\Contracts\Services\SimplicateDomainInterface;
+use Moddit\Simplicate\Contracts\Services\SimplicateClientInterface;
+use Moddit\Simplicate\Contracts\Services\SimplicateDomainInterface;
 
 trait FluentPassthruToClient
 {

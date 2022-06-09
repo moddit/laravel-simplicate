@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\Simplicate\Contracts\Data;
+namespace Moddit\Simplicate\Contracts\Data;
 
 interface SimplicateResponseInterface
 {
