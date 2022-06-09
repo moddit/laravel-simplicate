@@ -11,6 +11,8 @@ interface SimplicateServiceInterface
 
     public function hrm(): Domains\HrmDomainInterface;
 
+    public function crm(): Domains\CrmDomainInterface;
+
     public function projects(): Domains\ProjectsDomainInterface;
 
 }
