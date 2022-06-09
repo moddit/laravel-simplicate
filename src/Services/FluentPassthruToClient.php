@@ -53,6 +53,17 @@ trait FluentPassthruToClient
     }
 
     /**
+     * @param string $metadata
+     * @return SimplicateDomainInterface|$this
+     */
+    public function metadata(string $metadata)
+    {
+        $this->getClient()->metadata($metadata);
+
+        return $this;
+    }
+
+    /**
      * Sort next call in descending order.
      *
      * @return SimplicateDomainInterface|$this

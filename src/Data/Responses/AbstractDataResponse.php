@@ -28,10 +28,16 @@ abstract class AbstractDataResponse extends AbstractDataObject implements Simpli
      * @var int
      */
     protected $statusCode;
+    
+    /**
+     * @var array|null
+     */
+    protected $metadata;
 
 
-    public function __construct($data, ?array $errors = null, ?string $debug = null, int $statusCode = 200)
+    public function __construct(?array $metadata, $data, ?array $errors = null, ?string $debug = null, int $statusCode = 200)
     {
+        $this->metadata   = $metadata;
         $this->errors     = $errors;
         $this->debug      = $debug;
         $this->statusCode = $statusCode;
@@ -64,6 +70,11 @@ abstract class AbstractDataResponse extends AbstractDataObject implements Simpli
         return $this->statusCode;
     }
 
+    public function getMetadata(): ?array
+    {
+        return $this->metadata;
+    }
+
     public function toArray()
     {
         $data = $this->getData();
@@ -72,6 +83,7 @@ abstract class AbstractDataResponse extends AbstractDataObject implements Simpli
             'data'   => ($data instanceof Arrayable) ? $data->toArray() : $data,
             'errors' => $this->getErrors(),
             'debug'  => $this->getDebug(),
+            'metadata' => $this->getMetadata()
         ];
     }
     

@@ -32,6 +32,12 @@ interface SimplicateDomainInterface
     public function sort(string $sort);
 
     /**
+     * @param string $metadata
+     * @return $this
+     */
+    public function metadata(string $metadata);
+
+    /**
      * Sort next call in descending order.
      *
      * @return $this
