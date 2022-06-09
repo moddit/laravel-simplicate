@@ -1,11 +1,11 @@
 <?php
 
-namespace Czim\Simplicate\Services\Domains;
+namespace Moddit\Simplicate\Services\Domains;
 
-use Czim\Simplicate\Contracts\Data\SimplicateResponseInterface;
-use Czim\Simplicate\Contracts\Services\Domains\ProjectsDomainInterface;
-use Czim\Simplicate\Data\Responses\ServiceSingleResponse;
-use Czim\Simplicate\Data\Responses\ServicesListResponse;
+use Moddit\Simplicate\Contracts\Data\SimplicateResponseInterface;
+use Moddit\Simplicate\Contracts\Services\Domains\ProjectsDomainInterface;
+use Moddit\Simplicate\Data\Responses\ServiceSingleResponse;
+use Moddit\Simplicate\Data\Responses\ServicesListResponse;
 
 class ProjectsDomain extends AbstractDomain implements ProjectsDomainInterface
 {

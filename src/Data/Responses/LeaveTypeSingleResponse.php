@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Responses;
+namespace Moddit\Simplicate\Data\Responses;
 
-use Czim\Simplicate\Data\Leave\LeaveType;
+use Moddit\Simplicate\Data\Leave\LeaveType;
 
 /**
  * Class LeaveTypeSingleResponse

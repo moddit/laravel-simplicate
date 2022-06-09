@@ -1,10 +1,10 @@
 <?php
 
-namespace Czim\Simplicate\Data\Leave;
+namespace Moddit\Simplicate\Data\Leave;
 
 use Carbon\Carbon;
-use Czim\Simplicate\Data\AbstractDataObject;
-use Czim\Simplicate\Data\Employee\EmployeeReference;
+use Moddit\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\Employee\EmployeeReference;
 use Illuminate\Support\Arr;
 
 class Leave extends AbstractDataObject

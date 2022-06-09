@@ -1,12 +1,16 @@
 <?php
 
-namespace Czim\Simplicate\Services;
+namespace Moddit\Simplicate\Services;
 
-use Czim\Simplicate\Contracts\Data\SimplicateResponseInterface;
-use Czim\Simplicate\Contracts\Services\SimplicateClientInterface;
+use Moddit\Simplicate\Contracts\Data\SimplicateResponseInterface;
+use Moddit\Simplicate\Contracts\Services\SimplicateClientInterface;
+use Moddit\Simplicate\Services\Domains\HoursDomain;
+use Moddit\Simplicate\Services\Domains\HrmDomain;
+use Moddit\Simplicate\Services\Domains\ProjectsDomain;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Arr;
+use \GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
 class SimplicateClient implements SimplicateClientInterface
@@ -64,17 +68,26 @@ class SimplicateClient implements SimplicateClientInterface
      */
     protected $responseClass;
 
-
-    public function __construct(ClientInterface $client)
+    /**
+     * Constructor
+     */
+    public function __construct()
     {
-        $this->client = $client;
+        $this->client = new Client([  // Set the guzzle client
+            'base_uri' => config('simplicate.api.domain'),
+            'timeout'  => 2.0,
+            'headers'        => [
+                'Content-Type' => 'application/json'
+            ],
+        ]);
+
+        $this->setAuthentication();
     }
 
-
-    public function setAuthentication(string $key, string $secret): SimplicateClientInterface
+    public function setAuthentication(): SimplicateClientInterface
     {
-        $this->authenticationKey    = $key;
-        $this->authenticationSecret = $secret;
+        $this->authenticationKey    = config('simplicate.api.key');
+        $this->authenticationSecret = config('simplicate.api.secret');
 
         return $this;
     }
@@ -270,7 +283,7 @@ class SimplicateClient implements SimplicateClientInterface
     {
         if (null !== $this->authenticationKey && null !== $this->authenticationSecret) {
             Arr::set($options, 'headers.Authentication-Key', $this->authenticationKey);
-            Arr::set($options, 'aheaders.Authentication-Secret', $this->authenticationSecret);
+            Arr::set($options, 'headers.Authentication-Secret', $this->authenticationSecret);
         }
 
         return $options;
@@ -288,5 +301,4 @@ class SimplicateClient implements SimplicateClientInterface
         $this->sortDescending = false;
         $this->options        = [];
     }
-
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Czim\Simplicate\Data\Hours;
+namespace Moddit\Simplicate\Data\Hours;
 
-use Czim\Simplicate\Data\AbstractDataObject;
-use Czim\Simplicate\Data\CustomField\CustomField;
-use Czim\Simplicate\Data\Employee\EmployeeReference;
-use Czim\Simplicate\Data\Project\ProjectReference;
-use Czim\Simplicate\Data\Service\ServiceReference;
+use Moddit\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\CustomField\CustomField;
+use Moddit\Simplicate\Data\Employee\EmployeeReference;
+use Moddit\Simplicate\Data\Project\ProjectReference;
+use Moddit\Simplicate\Data\Service\ServiceReference;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

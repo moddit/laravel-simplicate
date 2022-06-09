@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Project;
+namespace Moddit\Simplicate\Data\Project;
 
-use Czim\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class Project extends AbstractDataObject

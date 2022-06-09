@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\Simplicate\Data\Hours;
+namespace Moddit\Simplicate\Data\Hours;
 
 use Illuminate\Support\Arr;
 

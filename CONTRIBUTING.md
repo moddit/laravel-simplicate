@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/czim/laravel-simplicate).
+We accept contributions via Pull Requests on [Github](https://github.com/moddit/laravel-simplicate).
 
 
 ## Pull Requests

@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\Simplicate\Data\Employee;
+namespace Moddit\Simplicate\Data\Employee;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

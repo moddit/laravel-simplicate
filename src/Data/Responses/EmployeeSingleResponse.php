@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Responses;
+namespace Moddit\Simplicate\Data\Responses;
 
-use Czim\Simplicate\Data\Employee\Employee;
+use Moddit\Simplicate\Data\Employee\Employee;
 
 /**
  * Class EmployeeSingleResponse

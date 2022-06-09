@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Responses;
+namespace Moddit\Simplicate\Data\Responses;
 
-use Czim\Simplicate\Data\Project\Service;
+use Moddit\Simplicate\Data\Project\Service;
 use Illuminate\Support\Collection;
 
 /**

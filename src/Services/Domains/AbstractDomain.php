@@ -1,10 +1,10 @@
 <?php
 
-namespace Czim\Simplicate\Services\Domains;
+namespace Moddit\Simplicate\Services\Domains;
 
-use Czim\Simplicate\Contracts\Services\SimplicateClientInterface;
-use Czim\Simplicate\Contracts\Services\SimplicateDomainInterface;
-use Czim\Simplicate\Services\FluentPassthruToClient;
+use Moddit\Simplicate\Contracts\Services\SimplicateClientInterface;
+use Moddit\Simplicate\Contracts\Services\SimplicateDomainInterface;
+use Moddit\Simplicate\Services\FluentPassthruToClient;
 
 abstract class AbstractDomain implements SimplicateDomainInterface
 {

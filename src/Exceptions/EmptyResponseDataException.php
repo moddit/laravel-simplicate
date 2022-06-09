@@ -1,6 +1,6 @@
 <?php
 
-namespace Czim\Simplicate\Exceptions;
+namespace Modditit\Simplicate\Exceptions;
 
 use RuntimeException;
 

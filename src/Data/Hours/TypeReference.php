@@ -1,8 +1,8 @@
 <?php
 
-namespace Czim\Simplicate\Data\Hours;
+namespace Moddit\Simplicate\Data\Hours;
 
-use Czim\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class TypeReference extends AbstractDataObject
