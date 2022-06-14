@@ -33,6 +33,12 @@ interface SimplicateClientInterface
     public function sort(string $sort): SimplicateClientInterface;
 
     /**
+     * @param string $metadata
+     * @return SimplicateClientInterface
+     */
+    public function metadata(string $metadata) : SimplicateClientInterface;
+
+    /**
      * Sort next call in descending order.
      *
      * @return $this

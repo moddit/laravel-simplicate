@@ -52,4 +52,10 @@ class CrmDomain extends AbstractDomain implements CrmDomainInterface
         return $this->client->responseClass(OrganisationSingleResponse::class)
             ->get($this->prefixPath('organization/'.$id));
     }
+
+    public function createOrganisation(array $body) : OrganisationSingleResponse
+    {
+        return $this->client->responseClass(OrganisationSingleResponse::class)
+            ->post($this->prefixPath('organization'), $body);
+    }
 }

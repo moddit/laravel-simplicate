@@ -4,9 +4,6 @@ namespace Moddit\Simplicate\Services;
 
 use Moddit\Simplicate\Contracts\Data\SimplicateResponseInterface;
 use Moddit\Simplicate\Contracts\Services\SimplicateClientInterface;
-use Moddit\Simplicate\Services\Domains\HoursDomain;
-use Moddit\Simplicate\Services\Domains\HrmDomain;
-use Moddit\Simplicate\Services\Domains\ProjectsDomain;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Arr;
@@ -50,6 +47,11 @@ class SimplicateClient implements SimplicateClientInterface
      * @var string|null
      */
     protected $sort;
+
+    /**
+     * @var string|null
+     */
+    protected $metadata = 'count,limit,total_count,offset';
 
     /**
      * @var bool
@@ -142,6 +144,17 @@ class SimplicateClient implements SimplicateClientInterface
     }
 
     /**
+     * @param string $metadata
+     * @return $this
+     */
+    public function metadata(string $metadata): SimplicateClientInterface
+    {
+        $this->metadata = $metadata;
+
+        return $this;
+    }
+
+    /**
      * Sort next call in descending order.
      *
      * @return $this
@@ -197,7 +210,6 @@ class SimplicateClient implements SimplicateClientInterface
 
         try {
             $response = $this->client->request($method, $path, $options);
-
         } catch (GuzzleException $e) {
 
             $this->resetFluentState();
@@ -245,6 +257,10 @@ class SimplicateClient implements SimplicateClientInterface
             $query['sort'] = ($this->sortDescending ? '-' : '') . $this->sort;
         }
 
+        if ($this->metadata) {
+            $query['metadata'] = $this->metadata;
+        }
+
         if ( ! empty($this->filter)) {
             $query['q'] = $this->filter;
         }
@@ -257,7 +273,6 @@ class SimplicateClient implements SimplicateClientInterface
         // The response should be JSON.
         try {
             $responseArray = json_decode($response->getBody()->getContents(), true);
-
         } catch (\Throwable $e) {
             // todo
             // error handling
@@ -267,9 +282,10 @@ class SimplicateClient implements SimplicateClientInterface
         $class = $this->responseClass;
 
         return new $class(
+            Arr::get($responseArray,'metadata'),
             Arr::get($responseArray,'data'),
             Arr::get($responseArray,'errors'),
-            Arr::get($responseArray,'debug')
+            Arr::get($responseArray,'debug'),
         );
     }
 
@@ -298,6 +314,7 @@ class SimplicateClient implements SimplicateClientInterface
         $this->limit          = null;
         $this->filter         = [];
         $this->sort           = null;
+        $this->metadata       = null;
         $this->sortDescending = false;
         $this->options        = [];
     }

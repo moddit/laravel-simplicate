@@ -16,4 +16,5 @@ interface SimplicateResponseInterface
 
     public function getStatusCode(): int;
 
+    public function getMetadata(): ?array;
 }
