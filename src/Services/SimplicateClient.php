@@ -203,7 +203,7 @@ class SimplicateClient implements SimplicateClientInterface
         $options = $this->addAuthenticationToOptions($this->options);
 
         if ($body !== null) {
-            $options['body'] = $body;
+            $options['body'] = json_encode($body);
         }
 
         $options['query'] = $this->collectQueryParameters();
@@ -211,7 +211,6 @@ class SimplicateClient implements SimplicateClientInterface
         try {
             $response = $this->client->request($method, $path, $options);
         } catch (GuzzleException $e) {
-
             $this->resetFluentState();
 
             // todo
