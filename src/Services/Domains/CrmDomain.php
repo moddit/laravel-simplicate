@@ -9,6 +9,7 @@ use Moddit\Simplicate\Data\Responses\PersonListResponse;
 use Moddit\Simplicate\Data\Responses\PersonSingleResponse;
 use Moddit\Simplicate\Data\Responses\ContactPersonListResponse;
 use Moddit\Simplicate\Data\Responses\ContactPersonSingleResponse;
+use Moddit\Simplicate\Data\Responses\OrganisationDeleteResponse;
 
 class CrmDomain extends AbstractDomain implements CrmDomainInterface
 {
@@ -63,5 +64,11 @@ class CrmDomain extends AbstractDomain implements CrmDomainInterface
     {
         return $this->client->responseClass(OrganisationSingleResponse::class)
             ->put($this->prefixPath('organization/'.$id), $body);
+    }
+
+    public function deleteOrganisation(string $id) : OrganisationDeleteResponse
+    {
+        return $this->client->responseClass(OrganisationDeleteResponse::class)
+            ->delete($this->prefixPath('organization/'.$id));
     }
 }
