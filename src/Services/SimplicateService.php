@@ -9,6 +9,7 @@ use Moddit\Simplicate\Services\Domains\HoursDomain;
 use Moddit\Simplicate\Services\Domains\HrmDomain;
 use Moddit\Simplicate\Services\Domains\ProjectsDomain;
 use Moddit\Simplicate\Services\Domains\CrmDomain;
+use Moddit\Simplicate\Services\Domains\ServicesDomain;
 
 class SimplicateService implements SimplicateServiceInterface
 {
@@ -42,8 +43,8 @@ class SimplicateService implements SimplicateServiceInterface
         $this->hrm      = new HrmDomain($this->client);
         $this->projects = new ProjectsDomain($this->client);
         $this->crm      = new CrmDomain($this->client);
+        $this->services = new ServicesDomain($this->client);
     }
-
 
     public function setAuthentication(string $key, string $secret): SimplicateServiceInterface
     {
@@ -70,5 +71,10 @@ class SimplicateService implements SimplicateServiceInterface
     public function crm(): Domains\CrmDomainInterface
     {
         return $this->crm;
+    }
+
+    public function services(): Domains\ServicesDomainInterface
+    {
+        return $this->services;
     }
 }

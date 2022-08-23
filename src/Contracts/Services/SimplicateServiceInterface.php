@@ -15,4 +15,5 @@ interface SimplicateServiceInterface
 
     public function projects(): Domains\ProjectsDomainInterface;
 
+    public function services(): Domains\ServicesDomainInterface;
 }

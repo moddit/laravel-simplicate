@@ -4,6 +4,7 @@ namespace Moddit\Simplicate\Services\Domains;
 
 use Moddit\Simplicate\Contracts\Data\SimplicateResponseInterface;
 use Moddit\Simplicate\Contracts\Services\Domains\ProjectsDomainInterface;
+use Moddit\Simplicate\Data\Responses\ProjectsListResponse;
 use Moddit\Simplicate\Data\Responses\ServiceSingleResponse;
 use Moddit\Simplicate\Data\Responses\ServicesListResponse;
 
@@ -16,6 +17,15 @@ class ProjectsDomain extends AbstractDomain implements ProjectsDomainInterface
     public function path(): string
     {
         return 'projects';
+    }
+
+    /**
+     * @return SimplicateResponseInterface|ServicesListResponse
+     */
+    public function all(): ProjectsListResponse
+    {
+        return $this->client->responseClass(ProjectsListResponse::class)
+            ->get($this->prefixPath('project'));
     }
 
     /**
