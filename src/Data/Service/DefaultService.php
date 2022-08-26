@@ -35,6 +35,11 @@ class DefaultService extends AbstractDataObject
      */
     protected $name;
 
+    /**
+     * @var float|null
+     */
+    protected $rate;
+
     public function __construct(array $data)
     {
         $this->id                    = Arr::get($data, 'id');
@@ -42,6 +47,7 @@ class DefaultService extends AbstractDataObject
         $this->createdAt             = $this->castStringAsDate(Arr::get($data, 'created_at'));
         $this->updatedAt             = $this->castStringAsDate(Arr::get($data, 'updated_at'));
         $this->name                  = Arr::get($data, 'name');
+        $this->rate                  = Arr::get($data, 'price');
     }
 
 
@@ -70,6 +76,11 @@ class DefaultService extends AbstractDataObject
         return $this->name;
     }
 
+    public function getRate(): ?float
+    {
+        return $this->rate;
+    }
+
     public function toArray(): array
     {
         return [
@@ -77,7 +88,8 @@ class DefaultService extends AbstractDataObject
             'vat_class'               => $this->getVatClass()->toArray(),
             'created_at'              => $this->formatDate($this->getCreatedAt()),
             'updated_at'              => $this->formatDate($this->getUpdatedAt()),
-            'name'                    => $this->getName()
+            'name'                    => $this->getName(),
+            'rate'                    => $this->getRate()
         ];
     }
 
