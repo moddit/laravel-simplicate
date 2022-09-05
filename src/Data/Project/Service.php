@@ -109,7 +109,7 @@ class Service extends AbstractDataObject
             },
                 Arr::get($data, 'hour_types', []))
         );
-        $this->vatClass              = new VatClass(Arr::get($data, 'vat_class'));
+        $this->vatClass              = new VatClass(Arr::get($data, 'vat_class', []));
         $this->revenueGroup          = new RevenueGroupReference(Arr::get($data, 'revenue_group', []));
         $this->invoiceInInstallments = (bool) Arr::get($data, 'invoice_in_installments');
         $this->createdAt             = $this->castStringAsDate(Arr::get($data, 'created_at'));

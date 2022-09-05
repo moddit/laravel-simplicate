@@ -2,6 +2,7 @@
 
 namespace Moddit\Simplicate\Data\Project;
 
+use Carbon\Carbon;
 use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
@@ -19,6 +20,16 @@ class Project extends AbstractDataObject
     protected $name;
 
     /**
+     * @var Carbon|null
+     */
+    protected $endDate;
+
+    /**
+     * @var Carbon|null
+     */
+    protected $startDate;
+
+    /**
      * @var OrganizationReference|null
      */
     protected $organization;
@@ -29,6 +40,8 @@ class Project extends AbstractDataObject
         $this->id           = Arr::get($data, 'id');
         $this->name         = Arr::get($data, 'name');
         $this->organization = new OrganizationReference(Arr::get($data, 'organization', []));
+        $this->endDate      = $this->castStringAsDate(Arr::get($data, 'end_date'));
+        $this->startDate    = $this->castStringAsDate(Arr::get($data, 'start_date'));
     }
 
 
@@ -42,6 +55,16 @@ class Project extends AbstractDataObject
         return $this->name;
     }
 
+    public function getStartDate(): ?Carbon
+    {
+        return $this->startDate;
+    }
+
+    public function getEndDate(): ?Carbon
+    {
+        return $this->endDate;
+    }
+
     public function getOrganization(): ?OrganizationReference
     {
         return $this->organization;
@@ -50,8 +73,10 @@ class Project extends AbstractDataObject
     public function toArray(): array
     {
         $array = [
-            'id'   => $this->getId(),
-            'name' => $this->getName(),
+            'id'         => $this->getId(),
+            'name'       => $this->getName(),
+            'start_date' => $this->formatDateOnly($this->getStartDate()),
+            'end_date'   => $this->formatDateOnly($this->getEndDate()),
         ];
 
         if ($this->organization) {

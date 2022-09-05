@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Moddit\Simplicate\Data\AbstractDataObject;
 use Moddit\Simplicate\Data\Hours\VatClass;
 use Illuminate\Support\Arr;
+use Moddit\Simplicate\Data\Project\RevenueGroupReference;
 
 class DefaultService extends AbstractDataObject
 {
@@ -26,6 +27,11 @@ class DefaultService extends AbstractDataObject
     protected $createdAt;
 
     /**
+     * @var RevenueGroupReference
+     */
+    protected $revenueGroup;
+
+    /**
      * @var Carbon|null
      */
     protected $updatedAt;
@@ -44,6 +50,7 @@ class DefaultService extends AbstractDataObject
     {
         $this->id                    = Arr::get($data, 'id');
         $this->vatClass              = new VatClass(Arr::get($data, 'vat_class'));
+        $this->revenueGroup          = new RevenueGroupReference(Arr::get($data, 'revenue_group') ?? []);
         $this->createdAt             = $this->castStringAsDate(Arr::get($data, 'created_at'));
         $this->updatedAt             = $this->castStringAsDate(Arr::get($data, 'updated_at'));
         $this->name                  = Arr::get($data, 'name');
@@ -81,11 +88,17 @@ class DefaultService extends AbstractDataObject
         return $this->rate;
     }
 
+    public function getRevenueGroup(): ?RevenueGroupReference
+    {
+        return $this->revenueGroup;
+    }
+
     public function toArray(): array
     {
         return [
             'id'                      => $this->getId(),
             'vat_class'               => $this->getVatClass()->toArray(),
+            'revenue_group'           => $this->getRevenueGroup()->toArray(),
             'created_at'              => $this->formatDate($this->getCreatedAt()),
             'updated_at'              => $this->formatDate($this->getUpdatedAt()),
             'name'                    => $this->getName(),

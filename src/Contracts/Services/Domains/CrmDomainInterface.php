@@ -23,4 +23,6 @@ interface CrmDomainInterface extends SimplicateDomainInterface
     public function allOrganisations(): OrganisationListResponse;
 
     public function organisation(string $id): OrganisationSingleResponse;
+
+    public function createOrganisation(array $body): OrganisationSingleResponse;
 }
