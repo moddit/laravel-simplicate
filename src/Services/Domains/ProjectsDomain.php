@@ -65,7 +65,7 @@ class ProjectsDomain extends AbstractDomain implements ProjectsDomainInterface
     /**
      * Create a new service on a project
      *
-     * @param array $body
+     * @param string $id
      * @return SimplicateResponseInterface|ServiceSingleResponse
      */
     public function createService(array $body): ServiceSingleResponse
