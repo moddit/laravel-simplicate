@@ -27,7 +27,7 @@ class VatClass extends AbstractDataObject
     public function __construct(array $data)
     {
         $this->id         = Arr::get($data, 'id');
-        $this->label      = Arr::get($data, 'label');
+        $this->label      = Arr::get($data, 'label', '');
         $this->percentage = Arr::get($data, 'percentage', 0);
     }
 
