@@ -22,6 +22,16 @@ class Service extends AbstractDataObject
     protected $projectId;
 
     /**
+     * @var string
+     */
+    protected $defaultServiceId;
+
+    /**
+     * @var string
+     */
+    protected $explanation;
+
+    /**
      * @var Carbon|null
      */
     protected $invoiceDate;
@@ -96,11 +106,12 @@ class Service extends AbstractDataObject
      */
     protected $trackCost;
 
-
     public function __construct(array $data)
     {
         $this->id                    = Arr::get($data, 'id');
         $this->projectId             = Arr::get($data, 'project_id');
+        $this->defaultServiceId      = Arr::get($data, 'default_service_id', '');
+        $this->explanation           = Arr::get($data, 'explanation', '');
         $this->invoiceDate           = $this->castStringAsDate(Arr::get($data, 'invoice_date'));
         $this->status                = Arr::get($data, 'status');
         $this->hoursTypes            = new Collection(
@@ -137,6 +148,16 @@ class Service extends AbstractDataObject
     public function getProjectId(): string
     {
         return $this->projectId;
+    }
+
+    public function getDefaultServiceId(): string
+    {
+        return $this->defaultServiceId;
+    }
+
+    public function getExplanation(): string
+    {
+        return $this->explanation;
     }
 
     public function getStatus(): string
@@ -218,6 +239,8 @@ class Service extends AbstractDataObject
         return [
             'id'                      => $this->getId(),
             'project_id'              => $this->getProjectId(),
+            'default_service_id'      => $this->getDefaultServiceId(),
+            'explanation'             => $this->getExplanation(),
             'invoice_date'            => $this->formatDate($this->getInvoiceDate()),
             'status'                  => $this->getStatus(),
             'hour_types'              => $this->getHoursTypes()->toArray(),
