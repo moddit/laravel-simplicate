@@ -33,7 +33,7 @@ class CrmDomain extends AbstractDomain implements CrmDomainInterface
     public function updatePerson(string $id, array $body): PersonSingleResponse
     {
         return $this->client->responseClass(PersonSingleResponse::class)
-            ->put($this->prefixPath('contactperson/'.$id), $body);
+            ->put($this->prefixPath('person/'.$id), $body);
     }
 
     public function allContactPersons(): ContactPersonListResponse
