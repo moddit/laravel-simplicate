@@ -20,7 +20,7 @@ interface CrmDomainInterface extends SimplicateDomainInterface
 
     public function contactPerson(string $id): ContactPersonSingleResponse;
     
-    public function updateContactPerson(string $id, array $body): ContactPersonSingleResponse;
+    public function updatePerson(string $id, array $body): PersonSingleResponse;
 
     public function allOrganisations(): OrganisationListResponse;
 
