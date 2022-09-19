@@ -42,6 +42,12 @@ class CrmDomain extends AbstractDomain implements CrmDomainInterface
             ->get($this->prefixPath('contactperson/'.$id));
     }
 
+    public function updateContactPerson(string $id, array $body): ContactPersonSingleResponse
+    {
+        return $this->client->responseClass(ContactPersonSingleResponse::class)
+            ->put($this->prefixPath('contactperson/'.$id), $body);
+    }
+
     public function allOrganisations(): OrganisationListResponse
     {
         return $this->client->responseClass(OrganisationListResponse::class)
