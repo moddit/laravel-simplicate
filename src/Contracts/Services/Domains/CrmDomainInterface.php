@@ -7,6 +7,7 @@ use Moddit\Simplicate\Data\Responses\ContactPersonListResponse;
 use Moddit\Simplicate\Data\Responses\ContactPersonSingleResponse;
 use Moddit\Simplicate\Data\Responses\OrganisationListResponse;
 use Moddit\Simplicate\Data\Responses\OrganisationSingleResponse;
+use Moddit\Simplicate\Data\Responses\PersonDeleteResponse;
 use Moddit\Simplicate\Data\Responses\PersonListResponse;
 use Moddit\Simplicate\Data\Responses\PersonSingleResponse;
 
@@ -16,12 +17,16 @@ interface CrmDomainInterface extends SimplicateDomainInterface
 
     public function person(string $id): PersonSingleResponse;
 
+    public function createPerson(array $body) : PersonSingleResponse;
+
+    public function updatePerson(string $id, array $body): PersonSingleResponse;
+
+    public function deletePerson(string $id): PersonDeleteResponse;
+
     public function allContactPersons(): ContactPersonListResponse;
 
     public function contactPerson(string $id): ContactPersonSingleResponse;
     
-    public function updatePerson(string $id, array $body): PersonSingleResponse;
-
     public function allOrganisations(): OrganisationListResponse;
 
     public function organisation(string $id): OrganisationSingleResponse;
