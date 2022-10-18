@@ -49,7 +49,7 @@ class DefaultService extends AbstractDataObject
     public function __construct(array $data)
     {
         $this->id                    = Arr::get($data, 'id');
-        $this->vatClass              = new VatClass(Arr::get($data, 'vat_class'));
+        $this->vatClass              = new VatClass(Arr::get($data, 'vat_class', []));
         $this->revenueGroup          = new RevenueGroupReference(Arr::get($data, 'revenue_group') ?? []);
         $this->createdAt             = $this->castStringAsDate(Arr::get($data, 'created_at'));
         $this->updatedAt             = $this->castStringAsDate(Arr::get($data, 'updated_at'));
