@@ -7,7 +7,7 @@ use Moddit\Simplicate\Data\Employee\Employee;
 /**
  * Class EmployeeSingleResponse
  *
- * @method Employee() getData()
+ * @method Employee getData()
  */
 class EmployeeSingleResponse extends AbstractDataResponse
 {

@@ -92,9 +92,9 @@ class ProjectsDomain extends AbstractDomain implements ProjectsDomainInterface
      * @param array $body
      * @return SimplicateResponseInterface|ServiceSingleResponse
      */
-    public function updateService(string $id): ServiceSingleResponse
+    public function updateService(string $id, array $body): ServiceSingleResponse
     {        
         return $this->client->responseClass(ServiceSingleResponse::class)
-            ->delete($this->prefixPath('service/' . $id));
+            ->put($this->prefixPath('service/' . $id), $body);
     }
 }

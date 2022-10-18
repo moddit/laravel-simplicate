@@ -23,5 +23,5 @@ interface ProjectsDomainInterface extends SimplicateDomainInterface
 
     public function deleteService(string $id): ServiceDeleteResponse;
 
-    public function updateService(string $id): ServiceSingleResponse;
+    public function updateService(string $id, array $body): ServiceSingleResponse;
 }
