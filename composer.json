@@ -1,0 +1,27 @@
+{
+    "name": "moddit/laravel-simplicate",
+    "description": "Laravel Simplicate API Client",
+    "keywords": [ "laravel", "simplicate", "api", "client" ],
+    "homepage": "https://github.com/moddit/laravel-simplicate",
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Moddit\\Simplicate\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Moddit\\Simplicate\\Providers\\SimplicateServiceProvider"
+            ],
+            "aliases": {
+                "SimplicateClient": "Moddit\\Simplicate\\Facades\\SimplicateClient"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
