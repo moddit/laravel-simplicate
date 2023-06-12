@@ -2,9 +2,6 @@
 
 For communicating with the Simplicate API.
 
-W.I.P.
-
-
 ## Version Compatibility
 
  Laravel             | Package 
