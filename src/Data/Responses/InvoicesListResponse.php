@@ -3,7 +3,7 @@
 namespace Moddit\Simplicate\Data\Responses;
 
 use Illuminate\Support\Collection;
-use Moddit\Simplicate\Data\Project\Invoice;
+use Moddit\Simplicate\Data\Invoices\Invoice;
 
 /**
  * Class InvoicesListResponse

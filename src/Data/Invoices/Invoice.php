@@ -1,6 +1,6 @@
 <?php
 
-namespace Moddit\Simplicate\Data\Project;
+namespace Moddit\Simplicate\Data\Invoices;
 
 use Carbon\Carbon;
 use Moddit\Simplicate\Data\AbstractDataObject;
