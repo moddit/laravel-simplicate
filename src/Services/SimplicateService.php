@@ -9,6 +9,7 @@ use Moddit\Simplicate\Services\Domains\HoursDomain;
 use Moddit\Simplicate\Services\Domains\HrmDomain;
 use Moddit\Simplicate\Services\Domains\ProjectsDomain;
 use Moddit\Simplicate\Services\Domains\CrmDomain;
+use Moddit\Simplicate\Services\Domains\InvoicesDomain;
 use Moddit\Simplicate\Services\Domains\ServicesDomain;
 
 class SimplicateService implements SimplicateServiceInterface
@@ -34,6 +35,11 @@ class SimplicateService implements SimplicateServiceInterface
      */
     protected $projects;
 
+    /**
+     * @var Domains\InvoicesDomainInterface
+     */
+    protected $invoices;
+
 
     public function __construct()
     {
@@ -44,6 +50,7 @@ class SimplicateService implements SimplicateServiceInterface
         $this->projects = new ProjectsDomain($this->client);
         $this->crm      = new CrmDomain($this->client);
         $this->services = new ServicesDomain($this->client);
+        $this->invoices = new InvoicesDomain($this->client);
     }
 
     public function setAuthentication(string $key, string $secret): SimplicateServiceInterface
@@ -76,5 +83,10 @@ class SimplicateService implements SimplicateServiceInterface
     public function services(): Domains\ServicesDomainInterface
     {
         return $this->services;
+    }
+
+    public function invoices(): Domains\InvoicesDomainInterface
+    {
+        return $this->invoices;
     }
 }
