@@ -1,8 +1,8 @@
 <?php
 
-namespace Modditit\Simplicate\Data\TimeTable;
+namespace Moddit\Simplicate\Data\TimeTable;
 
-use Modditit\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class TimeTableDay extends AbstractDataObject
@@ -56,5 +56,4 @@ class TimeTableDay extends AbstractDataObject
             'hours'      => $this->getHours(),
         ];
     }
-
 }

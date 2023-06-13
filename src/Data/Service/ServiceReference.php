@@ -1,8 +1,8 @@
 <?php
 
-namespace Modditit\Simplicate\Data\Service;
+namespace Moddit\Simplicate\Data\Service;
 
-use Modditit\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class ServiceReference extends AbstractDataObject
@@ -69,5 +69,4 @@ class ServiceReference extends AbstractDataObject
 
         return $array;
     }
-
 }

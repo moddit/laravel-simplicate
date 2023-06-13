@@ -1,8 +1,8 @@
 <?php
 
-namespace Modditit\Simplicate\Data\TimeTable;
+namespace Moddit\Simplicate\Data\TimeTable;
 
-use Modditit\Simplicate\Data\AbstractDataObject;
+use Moddit\Simplicate\Data\AbstractDataObject;
 use Illuminate\Support\Arr;
 
 class TimeTableWeek extends AbstractDataObject
@@ -75,7 +75,7 @@ class TimeTableWeek extends AbstractDataObject
             throw new \InvalidArgumentException('Number must be 1-7');
         }
 
-        return $this->days[ $number - 1 ];
+        return $this->days[$number - 1];
     }
 
 
@@ -91,5 +91,4 @@ class TimeTableWeek extends AbstractDataObject
             'day_7' => $this->getDay(7),
         ];
     }
-
 }
