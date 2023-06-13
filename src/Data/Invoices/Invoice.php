@@ -13,9 +13,21 @@ class Invoice extends AbstractDataObject
      */
     protected $id;
 
+    /**
+     * @var array
+     */
+    protected $invoice_lines;
+
+    /**
+     * @var Carbon
+     */
+    protected $date;
+
     public function __construct(array $data)
     {
         $this->id = Arr::get($data, 'id');
+        $this->date = Arr::get($data, 'date');
+        $this->invoice_lines = Arr::get($data, 'invoice_lines');
     }
 
     public function getId(): ?string
@@ -23,10 +35,22 @@ class Invoice extends AbstractDataObject
         return $this->id;
     }
 
+    public function getDate(): ?Carbon
+    {
+        return $this->date;
+    }
+
+    public function getInvoiceLines(): ?array
+    {
+        return $this->invoice_lines;
+    }
+
     public function toArray(): array
     {
         return [
             'id' => $this->getId(),
+            'date' => $this->getDate(),
+            'invoice_lines' => $this->getInvoiceLines(),
         ];
     }
 }
