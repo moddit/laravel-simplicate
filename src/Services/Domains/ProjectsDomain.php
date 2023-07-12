@@ -41,6 +41,17 @@ class ProjectsDomain extends AbstractDomain implements ProjectsDomainInterface
         return $this->client->responseClass(ProjectSingleResponse::class)
             ->post($this->prefixPath('project'), $body);
     }
+
+    /**
+     * Update project
+     *
+     * @return SimplicateResponseInterface|ProjectSingleResponse
+     */
+    public function update(string $id, array $body): ProjectSingleResponse
+    {
+        return $this->client->responseClass(ProjectSingleResponse::class)
+            ->put($this->prefixPath('project/' . $id), $body);
+    }
     
 
     /**
