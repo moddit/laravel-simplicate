@@ -30,6 +30,11 @@ class Project extends AbstractDataObject
     protected $startDate;
 
     /**
+     * @var int|null
+     */
+    protected $budget;
+
+    /**
      * @var OrganizationReference|null
      */
     protected $organization;
@@ -42,6 +47,7 @@ class Project extends AbstractDataObject
         $this->organization = new OrganizationReference(Arr::get($data, 'organization', []));
         $this->endDate      = $this->castStringAsDate(Arr::get($data, 'end_date'));
         $this->startDate    = $this->castStringAsDate(Arr::get($data, 'start_date'));
+        $this->budget       = Arr::get($data, 'budget.hours.value_budget');
     }
 
 
@@ -70,6 +76,11 @@ class Project extends AbstractDataObject
         return $this->organization;
     }
 
+    public function getBudget(): ?int
+    {
+        return $this->budget;
+    }
+
     public function toArray(): array
     {
         $array = [
@@ -77,6 +88,7 @@ class Project extends AbstractDataObject
             'name'       => $this->getName(),
             'start_date' => $this->formatDateOnly($this->getStartDate()),
             'end_date'   => $this->formatDateOnly($this->getEndDate()),
+            'budget'      => $this->getBudget(),
         ];
 
         if ($this->organization) {
@@ -85,5 +97,4 @@ class Project extends AbstractDataObject
 
         return $array;
     }
-
 }
