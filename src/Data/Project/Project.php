@@ -39,6 +39,10 @@ class Project extends AbstractDataObject
      */
     protected $organization;
 
+    /**
+     * @var string|null
+     */
+    protected $simplicate_url;
 
     public function __construct(array $data)
     {
@@ -48,6 +52,7 @@ class Project extends AbstractDataObject
         $this->endDate      = $this->castStringAsDate(Arr::get($data, 'end_date'));
         $this->startDate    = $this->castStringAsDate(Arr::get($data, 'start_date'));
         $this->budget       = Arr::get($data, 'budget.hours.value_budget');
+        $this->simplicate_url = Arr::get($data, 'simplicate_url');
     }
 
 
@@ -81,6 +86,11 @@ class Project extends AbstractDataObject
         return $this->budget;
     }
 
+    public function getSimplicateUrl(): ?string
+    {
+        return $this->simplicate_url;
+    }
+
     public function toArray(): array
     {
         $array = [
@@ -89,6 +99,7 @@ class Project extends AbstractDataObject
             'start_date' => $this->formatDateOnly($this->getStartDate()),
             'end_date'   => $this->formatDateOnly($this->getEndDate()),
             'budget'      => $this->getBudget(),
+            'simplicate_url' => $this->getSimplicateUrl(),
         ];
 
         if ($this->organization) {
