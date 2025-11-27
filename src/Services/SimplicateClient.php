@@ -77,7 +77,7 @@ class SimplicateClient implements SimplicateClientInterface
     {
         $this->client = new Client([  // Set the guzzle client
             'base_uri' => config('simplicate.api.domain'),
-            'timeout'  => 2.0,
+            'timeout'  => 20.0,
             'headers'        => [
                 'Content-Type' => 'application/json'
             ],
